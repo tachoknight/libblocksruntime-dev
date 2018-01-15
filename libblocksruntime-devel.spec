@@ -1,4 +1,4 @@
-%define builddir swift-compiler-rt-swift-DEVELOPMENT-SNAPSHOT-2018-01-12-a
+%global builddir swift-compiler-rt-swift-DEVELOPMENT-SNAPSHOT-2018-01-12-a
 Name:       libblocksruntime-devel              
 Version:    4.1
 Release:    1%{?dist}
@@ -33,18 +33,27 @@ cp buildlib %{builddir}/lib
 
 %build
 cd %{builddir}/lib
-./buildlib
+./buildlib -shared
 
 %install
 mkdir -p %{buildroot}/%{_libdir}
 mkdir -p %{buildroot}/%{_includedir}
 install -m 644 %{builddir}/lib/BlocksRuntime/Block.h %{buildroot}/%{_includedir}
 install -m 644 %{builddir}/lib/libBlocksRuntime.a %{buildroot}/%{_libdir}
+install -m 644 %{builddir}/lib/libBlocksRuntime.so.0.1 %{buildroot}/%{_libdir}
 
 %files
+%defattr(-,root,root,-)
+%{_libdir}/libBlocksRuntime.so.0.1
+
+%files devel
+%defattr(-,root,root,-)
 %{_libdir}/libBlocksRuntime.a
 %{_includedir}/Block.h
 
+%post -p /sbin/ldconfig
+
+%postun -p /sbin/ldconfig
 
 %changelog
 * Sun Jan 14 2018 Ron Olson <tachoknight@gmail.com> 4.1-1
