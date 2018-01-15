@@ -1,6 +1,5 @@
 # libblocksruntime
-This repository holds the files necessary to package Apple's
-Blocks development files from the compiler-rt project (from
-their swift-compiler-rt project here on GitHub).
-
+This project is for creating the Fedora package to allow installation
+of the Blocks library, from the compiler-rt sub-project of the 
+LLVM project
 
