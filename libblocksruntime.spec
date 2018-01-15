@@ -1,4 +1,4 @@
-%global builddir swift-compiler-rt-swift-DEVELOPMENT-SNAPSHOT-2018-01-12-a
+%global builddir compiler-rt-5.0.1.src
 %global shlibver 1
 Name:       libblocksruntime
 Version:    4.1
@@ -6,8 +6,8 @@ Group:      Development/Libraries
 Release:    1%{?dist}
 Summary:    The BlocksRuntime development files from Apple's compiler-rt project
 License:    MIT
-URL:        https://github.com/apple/swift-compiler-rt
-Source0:    https://github.com/apple/swift-compiler-rt/archive/swift-DEVELOPMENT-SNAPSHOT-2018-01-12-a.tar.gz
+URL:        http://compiler-rt.llvm.org
+Source0:    http://releases.llvm.org/5.0.1/compiler-rt-5.0.1.src.tar.xz
 Source1:    buildlib
 Source2:    config.h
 
@@ -39,7 +39,7 @@ This package contains the static library to develop
 applications that use libblocksruntime
 
 %prep
-tar zxf %{SOURCE0}
+tar xf %{SOURCE0}
 cp -p %SOURCE1 %{builddir}/lib
 cp -p %SOURCE2 %{builddir}/lib
 
