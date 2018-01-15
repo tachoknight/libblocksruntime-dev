@@ -17,6 +17,15 @@ software that uses blocks, a proposed extension to the
 C, Objective C, and C++ languages developed by Apple 
 to support the Grand Central Dispatch concurrency engine.
 
+%package devel
+Summary:  Development files for blocks
+Provides: libblocksruntime-devel-static = %{version}-%{release}
+
+%description devel
+Development files for compiling and statically linking
+blocks in a program that uses the Apple blocks
+proposed extension.
+
 %prep
 tar zxf %{SOURCE0}
 cp config.h %{builddir}/lib
