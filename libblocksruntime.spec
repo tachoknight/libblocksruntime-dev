@@ -1,5 +1,5 @@
 %global builddir swift-compiler-rt-swift-DEVELOPMENT-SNAPSHOT-2018-01-12-a
-%global shlibver 0.1
+%global shlibver 1
 Name:       libblocksruntime
 Version:    4.1
 Group:      Development/Libraries
@@ -45,15 +45,15 @@ cp -p %SOURCE2 %{builddir}/lib
 
 %build
 cd %{builddir}/lib
-./buildlib -shared
+./buildlib -shared %{shlibver}
 
 %install
 mkdir -p %{buildroot}%{_libdir}
 mkdir -p %{buildroot}%{_includedir}
 install -m 644 %{builddir}/lib/BlocksRuntime/Block.h %{buildroot}%{_includedir}
 install -m 644 %{builddir}/lib/libBlocksRuntime.a %{buildroot}%{_libdir}
-install -m 644 %{builddir}/lib/libBlocksRuntime.so.%{shlibver} %{buildroot}/%{_libdir}
-ln -fs libBlocksRuntime.so.%{shlibver} %{buildroot}%{_libdir}/libBlocksRuntime.so.0
+install -m 644 %{builddir}/lib/libBlocksRuntime.so.0.%{shlibver} %{buildroot}/%{_libdir}
+ln -fs libBlocksRuntime.so.0.%{shlibver} %{buildroot}%{_libdir}/libBlocksRuntime.so.0
 ln -fs libBlocksRuntime.so.0 %{buildroot}%{_libdir}/libBlocksRuntime.so
 
 %files

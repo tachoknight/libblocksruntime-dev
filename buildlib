@@ -30,7 +30,7 @@ if [ -n "$shared" ]; then
 			SHOPT2=
 			;;
 		*)
-			SHLIB="${LIB%.a}.so.0.1"
+			SHLIB="${LIB%.a}.so.0.$2"
 			SHOPT="-s -shared -Wl,-soname,${LIB%.a}.so.0 -Wl,-whole-archive"
 			SHOPT2="-Wl,-no-whole-archive"
 			;;
