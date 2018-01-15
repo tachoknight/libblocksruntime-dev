@@ -1,7 +1,7 @@
 %global builddir compiler-rt-5.0.1.src
 %global shlibver 1
 Name:       libblocksruntime
-Version:    4.1
+Version:    5.0.1
 Group:      Development/Libraries
 Release:    1%{?dist}
 Summary:    The BlocksRuntime development files from Apple's compiler-rt project
@@ -74,5 +74,5 @@ ln -fs libBlocksRuntime.so.0 %{buildroot}%{_libdir}/libBlocksRuntime.so
 %postun -p /sbin/ldconfig
 
 %changelog
-* Sun Jan 14 2018 Ron Olson <tachoknight@gmail.com> 4.1-1
+* Sun Jan 14 2018 Ron Olson <tachoknight@gmail.com> 5.0.1-1
 - Initial package for Fedora
