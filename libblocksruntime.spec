@@ -40,8 +40,8 @@ applications that use libblocksruntime
 
 %prep
 tar zxf %{SOURCE0}
-cp config.h %{builddir}/lib
-cp buildlib %{builddir}/lib
+cp -p %SOURCE1 %{builddir}/lib
+cp -p %SOURCE2 %{builddir}/lib
 
 %build
 cd %{builddir}/lib
