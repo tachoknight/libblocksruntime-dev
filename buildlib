@@ -31,7 +31,7 @@ if [ -n "$shared" ]; then
 			;;
 		*)
 			SHLIB="${LIB%.a}.so.0.1"
-			SHOPT="-shared -Wl,-soname,${LIB%.a}.so.0 -Wl,-whole-archive"
+			SHOPT="-s -shared -Wl,-soname,${LIB%.a}.so.0 -Wl,-whole-archive"
 			SHOPT2="-Wl,-no-whole-archive"
 			;;
 	esac
