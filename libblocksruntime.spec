@@ -4,8 +4,8 @@ Name:       libblocksruntime
 Version:    5.0.1
 Group:      Development/Libraries
 Release:    1%{?dist}
-Summary:    The BlocksRuntime development files from Apple's compiler-rt project
-License:    MIT
+Summary:    The BlocksRuntime development files from the compiler-rt sub-project of the LLVM Project
+License:    NCSA and MIT
 URL:        http://compiler-rt.llvm.org
 Source0:    http://releases.llvm.org/5.0.1/compiler-rt-5.0.1.src.tar.xz
 Source1:    buildlib
