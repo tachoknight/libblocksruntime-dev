@@ -1,6 +1,6 @@
 %global builddir swift-compiler-rt-swift-DEVELOPMENT-SNAPSHOT-2018-01-12-a
 %global shlibver 0.1
-Name:       libblocksruntime-devel              
+Name:       libblocksruntime
 Version:    4.1
 Group:      Development/Libraries
 Release:    1%{?dist}
@@ -58,12 +58,13 @@ ln -fs libBlocksRuntime.so.0 %{buildroot}%{_libdir}/libBlocksRuntime.so
 
 %files
 %defattr(-,root,root,-)
-%{_libdir}/*.so*
+%{_libdir}/*.so.*
+%license %{builddir}/LICENSE.TXT
 
 %files devel
 %defattr(-,root,root,-)
-%{_libdir}/*.so.*
 %{_includedir}/Block.h
+%{_libdir}/*.so
 
 %files static
 %defattr(-,root,root,-)
