@@ -1,5 +1,7 @@
 %global debug_package %{nil}
 %global shlibver 1
+
+
 Name:       libblocksruntime
 Version:    5.0.1
 Release:    1%{?dist}
@@ -10,7 +12,7 @@ Source0:    http://releases.llvm.org/5.0.1/compiler-rt-5.0.1.src.tar.xz
 Source1:    buildlib
 Source2:    config.h
 
-BuildRequires: gcc-c++
+BuildRequires: gcc
 
 %description
 This package contains development headers for building 
@@ -54,8 +56,8 @@ ln -fs libBlocksRuntime.so.0.%{shlibver} %{buildroot}%{_libdir}/libBlocksRuntime
 ln -fs libBlocksRuntime.so.0 %{buildroot}%{_libdir}/libBlocksRuntime.so
 
 %files
-%{_libdir}/*.so.*
 %license LICENSE.TXT
+%{_libdir}/*.so.*
 
 %files devel
 %{_includedir}/Block.h
