@@ -3,12 +3,12 @@
 
 
 Name:       libblocksruntime
-Version:    5.0.1
+Version:    7.0.0
 Release:    1%{?dist}
 Summary:    LLVM's compiler-rt/BlocksRuntime development files 
 License:    NCSA and MIT
 URL:        http://compiler-rt.llvm.org
-Source0:    http://releases.llvm.org/5.0.1/compiler-rt-5.0.1.src.tar.xz
+Source0:    http://releases.llvm.org/7.0.0/compiler-rt-7.0.0.src.tar.xz
 Source1:    buildlib
 Source2:    config.h
 
@@ -70,5 +70,7 @@ ln -fs libBlocksRuntime.so.0 %{buildroot}%{_libdir}/libBlocksRuntime.so
 %postun -p /sbin/ldconfig
 
 %changelog
+* Sun Dec 16 2018 Ron Olson <tachoknight@gmail.com> 7.0.0-1
+- Updated to Clang 7.0.0
 * Sun Jan 14 2018 Ron Olson <tachoknight@gmail.com> 5.0.1-1
 - Initial package for Fedora
